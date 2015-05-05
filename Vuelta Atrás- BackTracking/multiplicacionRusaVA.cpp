@@ -4,10 +4,11 @@
 
 using namespace std;
 
-
 /*
-	Método de la multiplicación rusa VA
-	OJO que es recursivo
+@brief función que calcula la multiplicación de dos números por el método de la multiplicación rusa
+@param x, entero
+@param y, entero
+@return entero con el resultado
 */
 
 int multiplicacionRusa(int x, int y){
@@ -15,7 +16,7 @@ int multiplicacionRusa(int x, int y){
 	if(x==0) return 0;
 	//Si multiplicamos por 1 devolvemos y, todo y por 1 es y
 	if(x==1) return y;
-	//Ahora si el módulo 2 es distinto de 0
+	
 	if((x%2)!=0) //Si es par le sumamos y dividimos x y multiplicamos y por 2
 		return (y + multiplicacionRusa(x/2, y*2));
 	else 
@@ -33,7 +34,6 @@ int main(void){
 
  	cout << "Ahora vamos a calcular la tabla de multiplicacion:";
  	cin >> valor;
-
  	for(int i =0; i<=10; i++){
  		cout <<" "<<valor<< "x" << i <<" = "<<multiplicacionRusa(valor, i );
  		cout << endl;
