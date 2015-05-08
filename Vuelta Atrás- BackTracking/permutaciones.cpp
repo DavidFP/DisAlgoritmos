@@ -9,18 +9,30 @@
 #include <cstdio>
 #include <iostream>
 #include <cstdlib>
-
-
 using namespace std;
 
-//función de factibilidad, comprueba si un número es válido o no
+/*
+	@brief Función de factibilidad
+	@param v[], vector donde vamos almacenando el cálculo de las permutaciones
+	@param paso, el paso de la ejecución por el que vamos
+	@return 1 o 0 dependiendo de si es factible o no
+*/
+
 int factible(int v[], int paso){
 	int i;
 	for (int i = 0; i < paso; ++i)
 		if(v[i]==v[paso]) return 0;
 	return 1;
 }
-//función de VA recursiva que calcula las permutaciones de los N elementos
+
+/*
+@brief 	función que calcula  las permutaciones de N elementos haciendo uso de la
+		técnica de vuelta atrás
+@param v, vector donde se van a ir almacenando las permutaciones
+@param N, número de elementos a los que queremos calcular las permutaciones
+@param paso, el paso de la ejecución por el que vamos
+@post Muestra por pantalla cada una de las permutaciones posibles
+*/
 void permutaciones(int *v, int N, int paso){
 	int i; 	
 	//Comprobamos si es solucion
@@ -44,8 +56,6 @@ void permutaciones(int *v, int N, int paso){
 	}
 }
 
-
-// Función principal del programa
 int main(void){
 	int N; // Cantidad de elementos de la permutación
 	int paso=0; 
