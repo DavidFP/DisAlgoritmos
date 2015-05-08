@@ -1,3 +1,11 @@
+/*
+	Ejercicio que obtiene todas las posibles permutaciones
+	de n elementos pasados por el usuario. 
+	Para el caso de 2 se debería obtener
+	0 1
+	1 0 
+
+*/
 #include <cstdio>
 #include <iostream>
 #include <cstdlib>
@@ -5,13 +13,14 @@
 
 using namespace std;
 
+//función de factibilidad, comprueba si un número es válido o no
 int factible(int v[], int paso){
 	int i;
 	for (int i = 0; i < paso; ++i)
 		if(v[i]==v[paso]) return 0;
 	return 1;
 }
-
+//función de VA recursiva que calcula las permutaciones de los N elementos
 void permutaciones(int *v, int N, int paso){
 	int i; 	
 	//Comprobamos si es solucion
@@ -36,15 +45,15 @@ void permutaciones(int *v, int N, int paso){
 }
 
 
-
+// Función principal del programa
 int main(void){
-	int N;
-	int paso=0;
-	int v[N];
+	int N; // Cantidad de elementos de la permutación
+	int paso=0; 
+	int v[N]; //Vector con la permutación de los elementos del N pasado
 	cout << "Cálculo de permutaciones con Vuelta Atrás" << endl;
 	cout << "¿De cuantos elementos quiere la permutacion?"<<endl;
 	cin>>N;
-	permutaciones(v,N,paso);
+	permutaciones(v,N,paso); // Llamada a la función
 	
 	return EXIT_SUCCESS;
 }
